@@ -12,3 +12,13 @@ function chuyen() {
     let doF = (doC * 9 / 5) + 32
     document.getElementById("doF").innerHTML = "ket qua:" + doF;
 }
+function bangS() {
+    let bankinh = parseInt(document.getElementById("bankinh").value);
+    let dientichhinhtron = 3.14*(bankinh*bankinh);
+    document.getElementById("dientichhinhtron").innerHTML = dientichhinhtron;
+}
+function bangC() {
+    let bankinhc = parseInt(document.getElementById("bankinhc").value);
+    let chuviC = 2*3.14*bankinhc;
+    document.getElementById("chuviC").innerHTML = chuviC;
+}
