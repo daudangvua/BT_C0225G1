@@ -1,9 +1,11 @@
 function convert(){
-    vatly = document.getElementById("vatly").value
-    hoahoc = document.getElementById("hoahoc").value
-    sinhhoc = document.getElementById("sinhhoc").value
+    var vatly = parseFloat( document.getElementById("vatly").value);
+    var hoahoc = parseFloat( document.getElementById("hoahoc").value);
+    var sinhhoc =parseFloat( document.getElementById("sinhhoc").value);
+
     tong = vatly+hoahoc+sinhhoc
     trungbinh = tong/3
-    document.getElementById("tong").innerHTML = "tong: " + tong;}
-    document.getElementById("trungbinh").innerHTML = "trungbinh: " + trungbinh.toFixed;}
+    document.getElementById("tong").innerHTML = "tong: " + tong;
+    document.getElementById("trungbinh").innerHTML = trungbinh;
+}
 
