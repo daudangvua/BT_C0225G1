@@ -7,5 +7,8 @@ function convert(){
     document.getElementById("tong").innerHTML = "tong: " + tong;
     document.getElementById("trungbinh").innerHTML = trungbinh;
 }
-
-7
+function chuyen() {
+    let doC = parseInt(document.getElementById("doC").value);
+    let doF = (doC * 9 / 5) + 32
+    document.getElementById("doF").innerHTML = "ket qua:" + doF;
+}
