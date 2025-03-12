@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <img id="dichuyen" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style = "width: 10%"/>
+  <br>
+  <input type="button" value="di" onclick="moveRight();" /></form>
+<script>
+  let anh = null;
+  anh = document.getElementById("dichuyen");
+  function init() {
+    anh = document.getElementById("dichuyen");
+    anh.style.position = "relative";
+    anh.style.right = "0px";
+  }
+  function moveRight() {
+    anh.style.left = parseInt(anh.style.left) + 10 + "px";
+  }
+  window.onload = init;
+</script>
+</body>
+</html>
