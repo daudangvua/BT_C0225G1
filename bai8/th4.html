@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  let browser = prompt("Nhập tên trình duyệt!");
+  switch (browser) {
+    case "Edge":
+      alert('Bạn đã có Edge!');
+      break;
+    case "Firefox":
+    case "Chrome":
+    case "Safari":
+    case "Opera":
+      alert('Được, chúng tôi cũng hỗ trợ các trình duyệt này')
+      break;
+    default:
+      alert('Trong du lieu chung toi chua cap nhat trinh duyet nay')
+  }
+</script>
 </body>
 </html>
