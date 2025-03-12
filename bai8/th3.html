@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  let userName = prompt("Ai o do?",'');
+  if (userName == 'Admin') {
+    let pass = prompt('Mat khau?','');
+    if (pass == '12345') {
+    alert('xin chao');
+    } else if (pass == null) {
+      alert('Huy');
+    } else {alert('Sai mat khau');}
+  } else if (userName == null){
+    alert('Huy');
+  } else {
+    alert("Toi khong biet ban");
+  }
+</script>
 </body>
 </html>
