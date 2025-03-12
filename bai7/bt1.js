@@ -9,16 +9,18 @@ function convert(){
 }
 function chuyen() {
     let doC = parseInt(document.getElementById("doC").value);
-    let doF = (doC * 9 / 5) + 32
+    let doF = (doC * 9 / 5) + 32;
     document.getElementById("doF").innerHTML = "ket qua:" + doF;
 }
 function bangS() {
     let bankinh = parseInt(document.getElementById("bankinh").value);
-    let dientichhinhtron = 3.14*(bankinh*bankinh);
+    const PI = 3.14159;
+    let dientichhinhtron = PI*(bankinh*bankinh);
     document.getElementById("dientichhinhtron").innerHTML = dientichhinhtron;
 }
 function bangC() {
     let bankinhc = parseInt(document.getElementById("bankinhc").value);
-    let chuviC = 2*3.14*bankinhc;
+    const PI = 3.14159;
+    let chuviC = 2*PI*bankinhc;
     document.getElementById("chuviC").innerHTML = chuviC;
 }
