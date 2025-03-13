@@ -1,4 +1,4 @@
-function getDaysInMonth() {
+function Month() {
     let month = document.getElementById("gan").value;
     switch (month) {
         case "1":
