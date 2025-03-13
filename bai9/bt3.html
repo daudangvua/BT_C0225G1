@@ -3,16 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>May tinh</title>
+    <style>
+        button {width: 100%;}
+    </style>
 </head>
 <body>
 <label for="nhap"><input type="text" id="nhap"></label><br>
 <table>
     <tr>
-        <td><button onclick="inputvalue(inq)">1</button></td>
-        <td><button onclick="inputvalue(inq)">2</button></td>
-        <td><button onclick="inputvalue(inq)">3</button></td>
-        <td><button onclick="inputvalue(inq)">+</button></td>
+        <td><button onclick="nhaps(1)">1</button></td>
+        <td><button onclick="nhaps(2)">2</button></td>
+        <td><button onclick="nhaps(3)">3</button></td>
+        <td><button onclick="nhaps('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="nhaps(4)">4</button></td>
+        <td><button onclick="nhaps(5)">5</button></td>
+        <td><button onclick="nhaps(6)">6</button></td>
+        <td><button onclick="nhaps('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="nhaps(7)">7</button></td>
+        <td><button onclick="nhaps(8)">8</button></td>
+        <td><button onclick="nhaps(9)">9</button></td>
+        <td><button onclick="nhaps('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button onclick= "xoa()">C</button></td>
+        <td><button onclick="nhaps(0)">0</button></td>
+        <td><button onclick="bang()">=</button></td>
+        <td><button onclick="nhaps('/')">/</button></td>
     </tr>
 </table>
+<script src="bt3.js"></script>
 </body>
 </html>

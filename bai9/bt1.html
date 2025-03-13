@@ -6,24 +6,23 @@
 </head>
 <body>
 <h2>Tính chỉ số cân nặng của cơ thể</h2>
-<label for="weight">can nang: <input type="text" id="weight"></label><br><br>
-<label for="height">chieu cao: <input type="text" id="height"></label><br>
+<label for="weight">can nang(kg): <input type="text" id="weight"></label><br><br>
+<label for="height">chieu cao(m): <input type="text" id="height"></label><br>
 <button onclick="tinh()">tinh</button>
 <p id="ketQua"></p>
 <script>
   function tinh() {
-      let weight = parseFloat(document.getElementById("weight").value);
-      let height = parseFloat(document.getElementById("height").value);
+      let weight = + document.getElementById("weight").value;
+      let height = + document.getElementById("height").value;
       let bmi = weight / (height ^ 2);
-      let ketQua = "";
-      if (bmi < 18.5 ) {
-          ketQua = "thieu can"
-      } else if (bmi < 25 ) {
-          ketQua = "binh thuong"
-      } else if (bmi < 30 ) {
-          ketQua = "thua can"
-      }else {
-          ketQua = "beo phi"}
+      let ketQua;
+      if (bmi < 30) {
+          if (bmi > 25) {
+              ketQua = bmi + " thừa cân";
+          } else if (bmi > 18.5) {
+              ketQua = bmi + " bình thường";
+          }else ketQua = bmi + " thiếu cân";
+      }else ketQua = bmi + " béo phì";
   document.getElementById("ketQua").innerHTML = ketQua;
   }
 </script>
