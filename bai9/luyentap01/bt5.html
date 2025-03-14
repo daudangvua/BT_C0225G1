@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label for="diem1">Điểm bài kiểm tra: <input type="number" id="diem1" min="0" max="10"></label><br><br>
+<label for="diem2">Điểm thi giữa kỳ: <input type="number" id="diem2" min="0" max="10"></label><br><br>
+<label for="diem3">Điểm thi cuối kỳ: <input type="number" id="diem3" min="0" max="10"></label><br><br>
+<button onclick="tinh()">xep loai</button>
+<p id="xeploai"></p>
+<script>
+    function tinh() {
+        let kt = + document.getElementById("diem1").value;
+        let gk = + document.getElementById("diem2").value;
+        let ck2 = + document.getElementById("diem3").value;
+        let tb = (kt + gk + ck2)/3;
+        let king;
+        if (tb < 8) {
+            if (tb > 7) {
+                king = "hoc luc kha";
+            } else if (tb >= 5) {
+                king = "hoc luc tb";
+            } else king = "hoc luc kem";
+        } else king = "hoc luc gioi";
+        document.getElementById("xeploai").innerHTML = king;
+    }
+</script>
 </body>
 </html>

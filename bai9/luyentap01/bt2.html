@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label for="nhaptuoi"><input type="text" id="nhaptuoi" placeholder="nhap tuoi"></label><br><br>
+<button onclick="kiemtra()">kiem tra</button>
+<p id="hien"></p>
+<script>
+  function kiemtra(){
+    let tuoi = + document.getElementById("nhaptuoi").value;
+    let qua;
+    if(tuoi >= 14 ){
+      qua = "học sinh đủ điều kiện vào học lớp 10";
+    } else qua = "học sinh khong du điều kiện vào học lớp 10";
+    document.getElementById("hien").innerHTML = qua;
+  }
+</script>
 </body>
 </html>

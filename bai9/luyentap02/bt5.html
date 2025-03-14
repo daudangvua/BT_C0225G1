@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Diện tích tam giác vuông khi biet do dai canh a, b</h2>
+<label for="dai_a"><input type="number" min="0" id="dai_a" placeholder="nhap do dai canh a"></label><br><br>
+<label for="dai_b"><input type="number" min="0" id="dai_b" placeholder="nhap do dai canh b"></label><br><br>
+<button onclick="bangbang()">Click</button>
+<br>
+<p id="ketqua"></p>
+<script>
+  function bangbang() {
+    let daia = + document.getElementById("dai_a").value;
+    let daib = + document.getElementById("dai_b").value;
+    if (daia == 0) {
+        if (daib == 0){
+            document.getElementById("ketqua").innerHTML = "không có cạnh bằng 0";
+        } else document.getElementById("ketqua").innerHTML = "không có cạnh bằng 0";
+    } else if (daib == 0){
+        document.getElementById("ketqua").innerHTML = "không có cạnh bằng 0";
+    } else document.getElementById("ketqua").innerHTML = "Dien tich tam giac vuong la: " + daia * daib / 2 + " centimet vuong";
+  }
+</script>
 </body>
 </html>

@@ -6,6 +6,23 @@
 </head>
 <body>
 <h2>Giải phương trình bậc 1</h2>
-
+<label for="nhapa"><input type="number" id="nhapa" placeholder="nhap a"></label><br><br>
+<label for="nhapb"><input type="number" id="nhapb" placeholder="nhap b"></label><br><br>
+<button onclick="tinh()">Click</button>
+<br>
+<p id="ketqua"></p>
+<script>
+    function tinh() {
+        let aa = + document.getElementById("nhapa").value;
+        let bb = + document.getElementById("nhapb").value;
+        let x;
+        if (aa == 0) {
+            if (bb == 0) {
+                x = "Phuong trinh vo so nghiem";
+            } else x = "Phuong trinh vo nghiem";
+        }else x = -bb / aa;
+        document.getElementById("ketqua").innerHTML = x;
+    }
+</script>
 </body>
 </html>

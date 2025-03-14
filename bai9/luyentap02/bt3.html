@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Tinh dien tich hinh vuong</h2>
+<label for="dientich"><input type="number" id="dientich" min="0"></label>
+<button onclick="dataa()">tinh</button>
+<br>
+<p id="ketqua"></p>
+<script>
+  function dataa() {
+    let canh = + document.getElementById("dientich").value;
+    if (canh == 0) {
+        document.getElementById("ketqua").innerHTML = "Bạn chắc chưa?"
+    }else document.getElementById("ketqua").innerHTML = "dien tich hinh vuong la: " + canh * canh + " centimet vuông";
+  }
+</script>
 </body>
 </html>

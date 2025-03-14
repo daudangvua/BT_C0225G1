@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>cước điện thoại</h2>
+<label for="nhap"><input type="text" id="nhap" placeholder="nhap so phut goi di"></label>
+<button onclick="kingf()">click</button>
+<br>
+<p id="kq"></p>
+<script>
+    function kingf() {
+        let so = document.getElementById("nhap").value;
+        let dien;
+        if (so < 1) {
+            dien = 800 * so;
+        } else if (so < 60) {
+            dien = 1200 * so;
+        } else {
+            dien = 2000 * so;
+        }
+        document.getElementById("kq").innerHTML = "so tien ban phai tra la: " + dien + " VND";
+    }
+</script>
 </body>
 </html>

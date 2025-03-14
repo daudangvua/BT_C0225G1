@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label for="thu"><input type="number" id="thu" min="0" placeholder="nhap so tien"></label><br><br>
+<button onclick="thanhtien()">click</button>
+<br>
+<p id="ra"></p>
+<script>
+  function thanhtien() {
+    let tien = + document.getElementById("thu").value;
+    let sotien = "" ;
+    if (tien < 5000000) {
+      if (tien > 2000000) {
+        sotien = tien * 0.06;
+      } else sotien = tien * 0.03;
+    }else sotien = tien * 0.1;
+    document.getElementById("ra").innerHTML = "So tien ban nhan duoc la: " + sotien + " VND";
+  }
+</script>
 </body>
 </html>

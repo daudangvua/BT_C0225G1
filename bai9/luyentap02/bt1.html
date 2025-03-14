@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>chuyen do nhiet do</h2>
+<label for="nhiet"><input type="number" id="nhiet" placeholder="nhap nhat do C"></label>
+<button onclick="kingman()">Chuyển đổi</button>
+<p id="bangbang"></p>
+<script>
+  function kingman() {
+    let doq = parseInt(document.getElementById("nhiet").value);
+    let gaga;
+    if (doq !== "") {
+      gaga = doq *9/5 +32;
+    }
+    document.getElementById("bangbang").innerHTML = "ket qua: " + gaga + " do F";
+  }
+</script>
 </body>
 </html>

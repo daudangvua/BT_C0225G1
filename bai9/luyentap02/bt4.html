@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Tinh dien tich hinh chu nhat khi biet canh a,b</h2>
+<label for="canh_a"><input type="number" id="canh_a" min="0" placeholder="nhap do dai canh a"></label><br><br>
+<label for="canh_b"><input type="number" id="canh_b" min="0" placeholder="nhap do dai canh b"></label><br><br>
+<button onclick="tinhs()">click</button>
+<br>
+<p id="ketqua"></p>
+<script>
+  function tinhs() {
+    let ca = + document.getElementById("canh_a").value;
+    let cb = + document.getElementById("canh_b").value;
+    if (ca == 0) {
+        document.getElementById("ketqua").innerHTML = "Bạn nhập đúng giá trị chưa?"
+    } else if (cb == 0) {
+        document.getElementById("ketqua").innerHTML = "Bạn nhập đúng giá trị chưa?"
+    }else document.getElementById("ketqua").innerHTML = "dien tich hinh chu nhat la: " + ca * cb + " centimet vuong";
+  }
+</script>
 </body>
 </html>

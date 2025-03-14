@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label for="nhap_a"><input type="text" id="nhap_a" placeholder="nhap"></label><br><br>
+<label for="nhap_b"><input type="text" id="nhap_b" placeholder="nhap"></label><br><br>
+<label for="nhap_c"><input type="text" id="nhap_c" placeholder="nhap"></label><br><br>
+<button onclick="ss()">kiem tra</button>
+<p id="in"></p>
+<script>
+  function ss(){
+    let so1 = document.getElementById("nhap_a").value;
+    let so2 = document.getElementById("nhap_b").value;
+    let so3 = document.getElementById("nhap_c").value;
+    if(so1 > so2){
+      if(so1 > so3){
+        document.getElementById("in").innerHTML = so1;
+      }else if (so2 > so3){
+          document.getElementById("in").innerHTML = so2;
+      }else document.getElementById("in").innerHTML = so3;
+    } else if (so2 > so3){
+        document.getElementById("in").innerHTML = so2;
+    }else
+        document.getElementById("in").innerHTML = so3;
+  }
+</script>
 </body>
 </html>

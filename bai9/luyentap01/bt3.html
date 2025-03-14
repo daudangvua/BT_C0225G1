@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label for="so"><input type="text" id="so" placeholder="nhap so bat ki"></label>
+<button onclick="kiemtra()">kiem tra</button>
+<p id="kp"></p>
+<script>
+  function kiemtra(){
+    let abc = document.getElementById("so").value;
+    let kiem;
+    if(abc >= 0){
+      if(abc == 0){
+        kiem = "bang 0";
+      } else kiem = "lon hon 0";
+    } else kiem = "nho hon 0";
+    document.getElementById("kp").innerHTML = kiem;
+  }
+</script>
 </body>
 </html>

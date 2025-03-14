@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label for="so_a"><input type="text" id="so_a" placeholder="nhap a"></label><br><br>
+<label for="so_b"><input type="text" id="so_b" placeholder="nhap b"></label><br><br>
+<button onclick="kiemtra()">kiem tra</button>
+<p id="hien"></p>
+<script>
+  function kiemtra(){
+    let xa = + document.getElementById("so_a").value;
+    let xb = + document.getElementById("so_b").value;
+    if(xa % xb == 0){
+      document.getElementById("hien").innerHTML="a chia het cho b";
+    } else document.getElementById("hien").innerHTML="a khong het cho b";
+  }
+</script>
 </body>
 </html>
