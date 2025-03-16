@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tinh gia dien</h2>
+<label for="sodien"><input type="number" id="sodien" placeholder="nhap so dien" min="0"></label>
+<button onclick="dien()">click</button>
+<br>
+<p id="demo"></p>
+<script>
+    function dien() {
+    let sd =parseFloat(document.getElementById("sodien").value);
+    let tien;
+        if ( sd < 50) {
+            tien = sd * 1200;
+        } else if ( sd < 75 ) {
+            tien = sd * 1700;
+        } else tien = sd * 2400;
+    document.getElementById("demo").innerHTML = "tien ban phai tra la: " + tien + " VND";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Giải phương trình bậc 2.</h2>
+<p>ax^2 + bx + c = 0</p>
+<label for="na"><input type="number" id="na" placeholder="nhap a"></label><br><br>
+<label for="nb"><input type="number" id="nb" placeholder="nhap b"></label><br><br>
+<label for="nc"><input type="number" id="nc" placeholder="nhap c"></label><br><br>
+<button onclick="phuongtrinh()">click</button>
+<br>
+<p id="ketp"></p>
+<script>
+  function phuongtrinh() {
+    let a = parseFloat(document.getElementById("na").value);
+    let b = parseFloat(document.getElementById("nb").value);
+    let c = parseFloat(document.getElementById("nc").value);
+    let delta;
+    if (a === 0) {
+      if (b === 0) {
+        if (c === 0) {
+          delta = "Phương trình có vô số nghiệm";
+        } else delta = "Phương trình vô nghiệm";
+      } else delta = `Phương trình có một nghiệm: x = ${-c / b}`;
+    }else { let deltax = b * b - 4 * a * c;
+      if (deltax > 0) {
+        let x1 = (-b + Math.sqrt(deltax)) / (2 * a);
+        let x2 = (-b - Math.sqrt(deltax)) / (2 * a);
+        delta = `Phương trình có hai nghiệm: x1 = ${x1}, x2 =  ${x2}`;
+      } else if (deltax === 0) {
+        let x = -b /(2 * a);
+        delta = `Phương trình có nghiệm kép: x = ${x}`;
+      } else
+        delta = "Phương trình vô nghiệm"
+      }
+    document.getElementById("ketp").innerHTML = delta;
+  }
+</script>
+</body>
+</html>

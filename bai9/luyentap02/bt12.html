@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let tiengui = + prompt("tien muon gui");
+  let  t = + prompt("so thang muon gui");
+  let laix = + prompt("lai xuat moi thang") / 100;
+  let kp;
+  if (tiengui <=0 || t <=0 ) {
+    alert("Nhap khong hop le ");
+  } else kp = tiengui * (1 + laix)^t;
+    alert("Tien gui sau " + t + " thang nhan duoc la: " + kp);
+
+</script>
+</body>
+</html>

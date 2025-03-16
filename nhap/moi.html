@@ -3,12 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
-<h1>Số thứ tự</h1>
-<p id="demo">bàn số năm</p>
-<p id="demo2">bàn số năm</p>
-<p id="name">bàn số năm</p>
-<script src="demo.js"></script>
+<label class="switch">
+    <input type="checkbox" id="toggleSwitch" onchange="toggleFunction()">
+    <span class="slider"></span>
+</label>
+<p id="status"></p>
+<style>
+    /* Thiết kế công tắc */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+    input:checked + .slider {
+        background-color: #4CAF50;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+</style>
+<!--<h1>Số thứ tự</h1>-->
+
+<!--<p id="demo">bàn số năm</p>-->
+<!--<p id="demo2">bàn số năm</p>-->
+
+<!--<p id="name">bàn số năm</p>-->
+
+<!--<form id="myForm">-->
+<!--    <input type="text" id="us   erInput" placeholder="Nhập dữ liệu">-->
+<!--    <button type="submit">Gửi</button>-->
+<!--</form>-->
+<!--<p id="result"></p>-->
+
+<!--<h3>Hãy điền tên vào ô nhập bên dưới</h3>-->
+<!--<input id="myName" type="text">-->
+<!--<button type="button" onclick="getValue()">Hiển thị tên</button>-->
+<!--<script src="demo.js"></script>-->
 </body>
 </html>

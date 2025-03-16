@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Kiểm tra xem 3 số thực</h2>
+<label for="nhapa"><input type="text" id="nhapa" placeholder="nhap canh a"></label><br><br>
+<label for="nhapb"><input type="text" id="nhapb" placeholder="nhap canh b"></label><br><br>
+<label for="nhapc"><input type="text" id="nhapc" placeholder="nhap canh c"></label><br><br>
+<button onclick="xem()">Click</button>
+<p id="kemtra"></p>
+<script>
+  function xem() {
+    let a = document.getElementById("nhapa").value;
+    let b = document.getElementById("nhapb").value;
+    let c = document.getElementById("nhapc").value;
+    if ( a > 0 && b > 0 && c > 0 ) {
+        if ( a + b > c ) {
+            if ( b + c > a ) {
+                if ( a + c > b ) {
+                    document.getElementById("kemtra").innerHTML = "Đây là ba cạnh của một tam giác."
+                } else document.getElementById("kemtra").innerHTML = "Đây không phải ba cạnh của một tam giác."
+            } else document.getElementById("kemtra").innerHTML = "Đây không phải ba cạnh của một tam giác."
+        } else document.getElementById("kemtra").innerHTML = "Đây không phải ba cạnh của một tam giác."
+    } else document.getElementById("kemtra").innerHTML = "Đây không phải ba cạnh của một tam giác."
+  }
+</script>
+</body>
+</html>

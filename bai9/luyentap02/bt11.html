@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let tien = + prompt("nhap so tien")
+  let kp;
+  if (tien <10000000) {
+    kp =tien - (tien * 0.05);
+  } else if (tien <50000000) {
+    kp =tien - (tien * 0.2);
+  } else  kp =tien - (tien * 0.5);
+  alert("Tien thue nhan duoc la: " + kp)
+</script>
+</body>
+</html>
