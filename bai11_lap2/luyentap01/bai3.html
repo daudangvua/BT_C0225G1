@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let Fibonacci0 = 0;
+  let Fibonacci1 = 1;
+  console.log(Fibonacci0);
+  console.log(Fibonacci1);
+  let Fibonacci = "";
+  for (let i = 0; i < 20; i++) {
+    Fibonacci = (Fibonacci0) + (Fibonacci1);
+    console.log(Fibonacci);
+    Fibonacci0 = Fibonacci1;
+    Fibonacci1 = Fibonacci;
+  }
+</script>
+</body>
+</html>

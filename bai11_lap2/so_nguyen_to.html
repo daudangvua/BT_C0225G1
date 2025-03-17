@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let numbers = + prompt("Bạn muốn nhìn thấy bao nhiêu số nguyên tố:");
+  let count = 0;
+  let n = 2;
+  while (count < numbers) {
+      if (n == 2) {
+          console.log(n);
+      } else if (n == 3) {
+          console.log(n);
+      } else if (n % 2 ===0 || n % 3 ===0) {
+          continue;
+      }console.log(n);
+      count ++;
+      n ++;
+  }
+</script>
+</body>
+</html>

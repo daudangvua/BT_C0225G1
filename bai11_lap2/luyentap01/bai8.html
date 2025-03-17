@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="batdau()">Chơi</button>
+<script>
+    function batdau() {
+        let count = +prompt("muốn đoán trong khoảng nào");
+        let random = Math.round(Math.random() * count);
+        console.log(random);
+        let nhap = +prompt("Số bạn đoán là:");
+        for (let i = 0; nhap !== random; i++) {
+            if (i == 3) {
+                alert("Hết lượt");
+                break;
+            } else if (nhap < random) {
+                alert("Tăng lên chút nữa");
+                nhap = +prompt("Số bạn đoán là:")
+            } else if (nhap > random) {
+                alert("Nhỏ hơn một chút");
+                nhap = +prompt("Số bạn đoán là:")
+            }alert("Bạn đã đoán đúng. Chúc mừng bạn!");
+        }
+    }
+
+</script>
+</body>
+</html>
