@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tien =+prompt("Số tiền gửi.");
+    let t = +prompt("Tháng gửi.");
+    let l = +prompt("Lãi xuất mỗi tháng (%).")/100;
+    let kp = tien;
+    for (let j = 1; j <= t; j++) {
+        kp += kp * l;
+    } document.write ("Tổng số tiền sau " + t + " tháng gửi là: " + kp + " VND")
+</script>
+</body>
+</html>
