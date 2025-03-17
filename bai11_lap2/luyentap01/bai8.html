@@ -12,18 +12,22 @@
         let random = Math.round(Math.random() * count);
         console.log(random);
         let nhap = +prompt("Số bạn đoán là:");
-        for (let i = 0; nhap !== random; i++) {
-            if (i == 3) {
+        let i = 0;
+            for (i = 0; nhap !== random; i++) {
+                if (i == 2) {
+                    alert("Hết lượt");
+                    break;
+                } else if (nhap < random) {
+                    alert("Tăng lên chút nữa");
+                } else if (nhap > random) {
+                    alert("Nhỏ hơn một chút");
+                } nhap = +prompt("Số bạn đoán là:")
+            }
+            if (i == 2) {
                 alert("Hết lượt");
-                break;
-            } else if (nhap < random) {
-                alert("Tăng lên chút nữa");
-                nhap = +prompt("Số bạn đoán là:")
-            } else if (nhap > random) {
-                alert("Nhỏ hơn một chút");
-                nhap = +prompt("Số bạn đoán là:")
-            }alert("Bạn đã đoán đúng. Chúc mừng bạn!");
-        }
+            } else {
+                alert("Ban da doan dung. Chuc mung ban!")
+            }
     }
 
 </script>
