@@ -6,14 +6,37 @@
 </head>
 <body>
 <script>
-    let a = 10;
-  document.write("<pre>");
-  for (let i = 0; i < a; i++) {
-      if (i == 0 || i == a-1) {
-          document.write("*".repeat(a) + "<br>");
-      } else document.write("*" + " ".repeat(a-2) + "*" + "<br>");
+  for (let i = 0; i < 5; i++) {
+      for (let j = 0; j <= i; j++) {
+          document.write("*");
+      }
+      document.write("<br>");
+  }document.write("<br>");
+
+  for (let i = 5; i > 0; i--) {
+      for (let j = 0; j < i; j++) {
+          document.write("*");
+      }
+      document.write("<br>");
+  }document.write("<br>");
+
+  for (let h = 0; h < 5; h++) {
+      for (let k = 0; k <=(5-h); k++) {
+          document.write("&nbsp;&nbsp;");
+      }
+      for (let k = 0; k <= h; k++) {
+          document.write("*");
+      }document.write("<br>");
+  }document.write("<br>");
+
+  for (let h = 0; h < 5; h++) {
+      for (let k = 0; k <=(5-h); k++) {
+          document.write("&nbsp;&nbsp;");
+      }
+      for (let k = 5; k > 0; k--) {
+          document.write("*");
+      }document.write("<br>");
   }
-  document.write("</pre>");
 </script>
 </body>
 </html>
