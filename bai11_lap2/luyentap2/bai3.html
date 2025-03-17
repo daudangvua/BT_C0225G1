@@ -6,20 +6,40 @@
 </head>
 <body>
 <script>
-    document.write("<pre>");
-    for (let i = 0; i <= 5; i++) {
-        document.write("*".repeat(i)+ "<br>");
-    }document.write("<br>");
-    for (let i = 5; i >= 1; i--) {
-        document.write("*".repeat(i) + "<br>");
-    }
-    for (let i = 0; i <= 5; i++) {
-        document.write(" ".repeat(5 - i) + "*".repeat(i) + "<br>");
-    }document.write("<br>");
-    for (let i = 5; i >= 1; i--) {
-        document.write(" ".repeat(5 - i) + "*".repeat(i) + "<br>");
-    }
-    document.write("</pre>");
+  for (let i = 0; i < 5; i++) {
+      for (let j = 0; j <= i; j++) {
+          document.write("*");
+      }
+      document.write("<br>");
+  }document.write("<br>");
+
+  for (let i = 5; i > 0; i--) {
+      for (let j = 0; j < i; j++) {
+          document.write("*");
+      }
+      document.write("<br>");
+  }document.write("<br>");
+
+  for (let h = 0; h < 5; h++) {
+      for (let k = 0; k <=(5-h); k++) {
+          document.write("&nbsp;&nbsp;");
+      }
+      for (let k = 0; k <= h; k++) {
+          document.write("*");
+      }document.write("<br>");
+  }document.write("<br>");
+
+  for (let h = 0; h < 5; h++) {
+      // In khoảng trắng đầu hàng
+      for (let k = 0; k < h; k++) {
+          document.write("&nbsp;&nbsp;");
+      }
+      // In dấu sao
+      for (let k = 5; k > h; k--) {
+          document.write("*");
+      }
+      document.write("<br>");
+  }
 </script>
 </body>
 </html>

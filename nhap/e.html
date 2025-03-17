@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<table id="bangCuuChuong"></table>
+<script>
+    let table = document.getElementById("bangCuuChuong");
+    let row = document.createElement("tr");
+
+    for (let i = 2; i <= 9; i++) { // Lặp từ 2 đến 9
+        let col = document.createElement("td");
+        let tableContent = "";
+
+        for (let j = 1; j <= 9; j++) { // Lặp từ 1 đến 9
+            tableContent += `${i} * ${j} = ${i * j} <br>`;
+        }
+
+        col.innerHTML = tableContent;
+        row.appendChild(col);
+    }
+
+    table.appendChild(row);
+</script>
 </body>
 </html>

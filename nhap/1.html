@@ -5,11 +5,36 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    for (i = 5; i < 10; i++) {
-        if (i % 2 === 0) {
+<h2>Fibonaci</h2>
+<label for="first">Nhập số đầu tiên:</label>
+<input type="number" id="first" placeholder="Nhập số thứ nhất">
+<br><br>
+<label for="second">Nhập số thứ hai:</label>
+<input type="number" id="second" placeholder="Nhập số thứ hai">
+<br><br>
+<button onclick="generateFibonacci()">Hiển thị dãy Fibonacci</button>
+<p id="result"></p>
 
-        }console.log();
+<script>
+    function generateFibonacci() {
+        let a = parseInt(document.getElementById("first").value);
+        let b = parseInt(document.getElementById("second").value);
+
+        if (isNaN(a) || isNaN(b)) {
+            document.getElementById("result").innerHTML = "Vui lòng nhập hai số hợp lệ!";
+            return;
+        }
+
+        let result = a + ", " + b; // Hiển thị hai số đầu tiên
+
+        for (let i = 3; i <= 10; i++) { // Tính 8 số còn lại
+            let next = a + b;
+            result += ", " + next;
+            a = b;
+            b = next;
+        }
+
+        document.getElementById("result").innerHTML = result;
     }
 </script>
 </body>
