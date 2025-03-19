@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let enter = prompt("Nhập");
+  let enter1=[];
+  for (let i = 0; i < enter.length; i++) {
+    if (enter[i] == "-") {
+      enter1.push("_");
+    }else enter1.push(enter[i]);
+  }
+  console.log(enter1.join(""));
+
+</script>
+</body>
+</html>
