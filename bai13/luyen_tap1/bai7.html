@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let enter = [];
+  for (let i = 0; i < 10; i++) {
+    enter.push(Math.floor(Math.random() * 100));
+  }
+  console.log("Mảng :", enter);
+  let nhap = parseInt(prompt("kiểm tra số có trong mảng không:"));
+  let index = enter.indexOf(nhap);
+  if (index !== -1) {
+    enter.splice(index, 1);
+    enter.push(0);
+    document.write(enter);
+  } else document.write(`Số ${nhap} không thuộc mảng.`);
+</script>
+</body>
+</html>

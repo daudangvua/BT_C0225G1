@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array =[10,12,2,12,3,45,2,65,3,2];
+    document.write(array + "<br>");
+    let result = [];
+    for (let i = 0; i < array.length;i++) {
+        if (array[i] > 10) {
+            result.push(array[i]++);
+        }
+    }
+    console.log(result);
+    document.write(`Có ${result.length} số lơn hơn 10 là:${result.join(", ")}`);
+</script>
+</body>
+</html>

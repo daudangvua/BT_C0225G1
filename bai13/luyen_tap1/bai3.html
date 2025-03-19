@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let enter = [4,3,6,2,8,9,34,4,21,3]
+    let max = enter[0];
+    let sum = 0;
+    for (let i = 1; i < enter.length; i++) {
+        if (enter[i] > max) {
+            max = enter[i];
+        }
+    }
+    for (let i = 0; i < enter.length; i++) {
+        sum += enter[i];
+    }
+    let avg = sum / enter.length;
+    document.write(`Giá trị lớn nhất là: ${max} , giá trị trung bình của các phần tử trong bảng ${avg}`);
+</script>
+</body>
+</html>

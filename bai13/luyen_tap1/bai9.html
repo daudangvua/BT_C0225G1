@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [];
+  let b = [];
+  for (let i = 0; i < 10; i++) {
+    let num = parseInt(prompt(`Mảng a nhập phần tử thứ ${i} `));
+    a.push(num);
+
+  }
+  document.write(`Mảng a: ${a} <br>`);
+  for (let i = 0; i < 10; i++) {
+    let num = parseInt(prompt(`Mảng b nhập phần tử thứ ${i}`));
+    b.push(num);
+
+  }
+  document.write(`Mảng b: ${b} <br>`);
+  let c = b.concat(a);
+  document.write(`Mảng c: ${c}`);
+</script>
+</body>
+</html>
