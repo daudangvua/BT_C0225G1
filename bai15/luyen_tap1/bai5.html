@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let index1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+  let index2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+  let sao = -1
+  function addEnter(enter) {
+    for (let i = 0; i < index1.length; i++) {
+      if (index1[i] == enter) {
+        sao = i;
+        break;
+      }
+    }
+    if (sao != -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  let nhap = prompt("nhập");
+  let check = addEnter(nhap);
+  if (check) {
+    alert(`${index2[sao]}`);
+  } else {
+    alert(`Ngôi sao đã lụi tàn`);
+  }
+</script>
+</body>
+</html>

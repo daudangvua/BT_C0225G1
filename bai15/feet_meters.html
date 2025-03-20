@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Chuyển đổi giữa feet và meters</h2>
+<p>chuyển feet sang meters:</p>
+<label for="foot"><input type="number" id="foot" placeholder="nhập feet"></label>
+<button onclick="inFoot()">Click</button>
+<br>
+<p id="feet_sang_meters"></p>
+<br>
+<p>chuyển meters sang feet:</p>
+<label for="meter"><input type="number" id="meter" placeholder="nhập meters"></label>
+<button onclick="inMeter()">Click</button>
+<br>
+<p id="meters_sang_feet"></p>
+<script>
+  function footToMeter(foot) {
+    let meter = 0.305 * foot;
+    return meter;
+  }
+  function meterToFoot(meter) {
+    let foot = 3.279 * meter;
+    return foot;
+  }
+  function inFoot() {
+    let f = parseFloat(document.getElementById("foot").value);
+    let met = footToMeter(f);
+    document.getElementById("feet_sang_meters").innerHTML = `${met} m`;
+  }
+  function inMeter() {
+    let m = parseFloat(document.getElementById("meter").value);
+    let feet=meterToFoot(m);
+    document.getElementById("meters_sang_feet").innerHTML = `${feet} inches`;
+  }
+</script>
+</body>
+</html>
