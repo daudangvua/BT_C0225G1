@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b>Tính diện tích hình tròn:</b><br>
+<label for="acreage"><input type="text" id="acreage" placeholder="nhập bán kính"></label>
+<button onclick="stron()">Click</button>
+<p id="stron"></p>
+<br>
+<b>Tính chu vi hình tròn</b><br>
+<label for="perimeter"><input type="text" id="perimeter" placeholder="nhập bán kính"></label>
+<button onclick="ctron()">Click</button>
+<p id="ctron"></p>
+<script>
+  function acreage(circle) {
+    let acreage = 3.14 * circle^2;
+    return acreage;
+  }
+  function perimeter(so) {
+    let perimeter = 2*3.14 * so;
+    return perimeter;
+  }
+  function stron() {
+    let check = parseFloat(document.getElementById('acreage').value);
+    let kq = acreage(check);
+    document.getElementById('stron').innerHTML = `Diện tích hình tròn: ${kq} cm2`;
+  }
+  function ctron() {
+    let check = parseFloat(document.getElementById('acreage').value);
+    let kq = perimeter(check);
+    document.getElementById('ctron').innerHTML = `Chu vi hình tròn: ${kq} cm`;
+  }
+</script>
+</body>
+</html>

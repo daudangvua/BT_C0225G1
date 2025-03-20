@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinh(factorial) {
+        if (factorial < 0){
+            return ('không tồn tại');
+        }
+        let index = 1;
+        for (let i = 1; i <=factorial ; i++) {
+            if (factorial == 0) {
+                return ('1');
+            } else {
+                index *= i ;
+            }
+        }return index;
+    }
+    let check = parseFloat(prompt('Nhập số tính giai thừa'));
+    let enter = tinh(check);
+    alert(`Lũy thừa của ${check} là: ${enter}`);
+
+</script>
+</body>
+</html>
