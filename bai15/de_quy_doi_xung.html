@@ -6,15 +6,16 @@
 </head>
 <body>
 <script>
-  function isPalindrome(word) {
-    if (word.length <= 1) return true; // Điều kiện dừng
-    if (word[0] !== word[word.length - 1]) return false; // Nếu ký tự đầu và cuối không khớp
-
-    return isPalindrome(word.slice(1, -1)); // Đệ quy kiểm tra phần còn lại
+  function enter(word) {
+    if (word.length <= 1)
+      return true;
+    if (word[0] !== word[word.length - 1])
+      return false;
+    return enter(word.slice(1, -1));
   }
   let nhap = prompt("nhap");
-  let check = isPalindrome(nhap);
-  alert(check);
+  let check = enter(nhap);
+  alert(check)
 </script>
 </body>
 </html>
