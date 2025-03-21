@@ -5,6 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+  let enter = prompt("tạo mảng cách nhau bằng dấu phẩy");
+  let arr = enter.split(",");
+  let check = prompt("nhập một ký tự bất kỳ");
+  let varr = scout(arr, check);
+  function scout(so1,so2) {
+    for (let i = 0; i < so1.length; i++) {
+      if (so1[i] == so2) {
+        return true;
+        break;
+      }
+    }
+    return false;
+  }
+  alert(varr);
+</script>
 </body>
 </html>
