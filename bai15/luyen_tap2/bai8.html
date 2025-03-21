@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let index = prompt("nhập mảng cách nhau bằng dấu phẩy");
+  let arr = index.split(",");
+  let index1 = enter(arr);
+  function enter(mang) {
+    let arr2 = [];
+    for (let i = 0; i < arr.length; i++) {
+      mang[i] = arr2.unshift(mang[i]);
+    }
+    return arr2;
+  }
+  alert(index1);
+</script>
+</body>
+</html>

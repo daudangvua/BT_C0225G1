@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function enter(doi) {
+    let a = doi.split("");
+    let b=[];
+    for (let i = 0; i < a.length; i++) {
+      a[i] = b.unshift(a[i]);
+    }
+    let c = b.join("");
+    return c;
+  }
+  let index = prompt("nhập hai số");
+  let index1 = enter(index);
+  alert(index1);
+</script>
+</body>
+</html>
