@@ -6,13 +6,28 @@
 </head>
 <body>
 <script>
-  let el = ["search","my","name","true","false"];
-  let vn = ["tìm kiếm","tôi","tên","đúng","sai"];
-  let chu = prompt("nhap");
-  let index = el.indexOf(chu);
-  if (index !== -1) {
-      alert("Từ " + chu + " được dịch là: " +vn[index]);
-  } else alert("Không tìm thấy");
+    let arr_vi = ["mot", "hai", "ba"];
+    let arr_en = ["one", "two", "three"];
+
+    //kiem tra tu nhap vao co trong mang tieng viet hay ko?
+    let key = prompt("Xin moi nhap tu can tim kiem");
+    // 1 bien de kiem tra
+    let index = -1;
+    for (let i = 0; i < arr_vi.length; i++) {
+        if (arr_vi[i] == key) {
+            //     hien thi co
+            index = i;
+            break;
+        }
+    }
+    // dua ra ket luan ngay trong vong lap
+    if (index != -1) {
+        document.write(`${key} co nghia la ${arr_en[index]}`);
+        // document.write(`${arr_en[index]}`);
+    }
+    else {
+        document.write(`${key} khong co trong mang`)
+    }
 </script>
 </body>
 </html>

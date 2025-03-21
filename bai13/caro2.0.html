@@ -3,29 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        input{ width: 100px; }
+    </style>
 </head>
 <body>
+<h2>Cờ caro</h2>
+<label for="x"><input type="number" id="x" min="0" max="4" placeholder="hàng ngang"></label>
+<label for="y"><input type="number" id="y" min="0" max="4" placeholder="hàng doc"></label>
+<button onclick="chon()">Chọn</button>
+<p id="out"></p>
+
 <script>
-  let x = prompt("theo chieu doc");
-  let y = prompt("theo chieu ngang");
-  let board = [];
-  let data ="";
-  let i = 0;
-  for(i=0 ; i<5 ; i++){
-    board[i] = new Array("(.)","(.)","(.)","(.)","(.)");
-  }
-  for(let i=0 ; i<5 ; i++){
-    data+="<br/>"
-    for(let j=0 ; j<5 ; j++){
-      data+=board[i][j] + "&nbsp;&nbsp";
+    // Khởi tạo bàn cờ 5x5
+    let board = [];
+    let h = 1; // Biến đếm lượt chơi (1: "o", 2: "x")
+    let data = ""; // Chuỗi hiển thị bàn cờ
+
+    for (let i = 0; i < 5; i++) {
+        board[i] = new Array("(.)", "(.)", "(.)", "(.)", "(.)");
     }
-  }
-  document.write(data);
-  for(x=0 ; x<board.length ; x++){
-    for(y=0 ; y<board.length ; y++){
-      console.log(board[x][y]);
+    data = ""; // Reset data
+    for (let i = 0; i < 5; i++) {
+        data += board[i].join("  ") + "<br/>";
     }
-  }
+    document.getElementById("out").innerHTML = data;
+    function chon() {
+        let x = parseInt(document.getElementById("x").value);
+        let y = parseInt(document.getElementById("y").value);
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (board[i][j] === 'x' && board[i][j+1] === 'x' && board[i][j+2] === 'x' ||
+                    board[i][j] === 'x' && board[i+1][j] === 'x' && board[i+2][j] === 'x'){
+                    alert("x Thắng");
+                } else if(board[i][j] === 'o' && board[i][j+1] === 'o' && board[i][j+2] === 'o' ||
+                    board[i][j] === 'o' && board[i+1][j] === 'o' && board[i+2][j] === 'o') {
+                    alert("o Thắng");
+                }
+            }
+        }
+        if (x >= 0 && x < 5 && y >= 0 && y < 5 && board[x][y] === "(.)") {
+            if (h % 2 === 0) {
+                board[x][y] = "x";
+            } else {
+                board[x][y] = "o";
+            }
+            h++;
+            data = "";
+            for (let i = 0; i < 5; i++) {
+                data += board[i].join("  ") + "<br/>";
+            }
+            document.getElementById("out").innerHTML = data;
+        } else {
+            alert("Nước đi không hợp lệ! Chọn ô trống từ 0-4.");
+        }
+    }
+
 </script>
 </body>
 </html>
