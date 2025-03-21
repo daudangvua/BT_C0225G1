@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Sample Screen:</h2>
+<input placeholder="product name" id="name"><button onclick="addNew()">Add</button>
+<h4>Danh sách tất cả sản phẩm:</h4>
+<table>
+    <tbody id="show"></tbody>
+</table>
+<script>
+    let array = ["Sony Xperia", "Samsung Galaxy", "Nokia 6"];
+    function showAll() {
+        let enter = "";
+        for (let i = 0; i < array.length; i++) {
+            enter += `<tr>
+            <td>${array[i]}</td>
+            <td><button onclick="editBy(${i})">Edit</button></td>
+            <td><button onclick="deleteBy(${i})">Delete</button></td>
+            </tr>`;
+        }
+        document.getElementById("show").innerHTML = enter;
+    }
+    showAll();
+    function addNew() {
+        let newArray = document.getElementById("name").value;
+        array.push(newArray);
+        document.getElementById("name").value = "";
+        showAll();
+    }
+    function deleteBy(index) {
+        array.splice(index, 1);
+        showAll();
+    }
+    function editBy(i) {
+        array[i] = prompt("sửa tên")
+        showAll();
+    }
+</script>
 </body>
 </html>
