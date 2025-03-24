@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        C;
+        min;
+        constructor(C,min) {
+            this.C = C;
+            this.min = -273;
+            if (C < this.min) {
+                alert(`Nhiệt độ không thể nhỏ hơn ${this.min} độ C!`);
+            }
+        }
+        doCquaF() {
+            return this.C*1.8+32;
+        }
+        doCquaK(){
+            return this.C+273.15;
+        }
+    }
+    let newC = new Temperature(25);
+    document.write(`Đổi ${newC.C} độ C qua độ F: ${newC.doCquaF()} Fahrenheit <br>`)
+    document.write(`Đổi ${newC.C} độ C qua độ K: ${newC.doCquaK()} Kelvin`)
+</script>
+</body>
+</html>
