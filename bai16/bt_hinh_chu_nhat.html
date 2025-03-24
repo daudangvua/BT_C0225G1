@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500" style="border: 1px solid #000000;"></canvas>
+<script>
+  class Rectangle {
+      length;
+      width;
+      constructor(length, width) {
+          this.length = length;
+          this.width = width;
+      }
+      dientich(){
+          return this.length*this.width;
+      }
+      chuvi(){
+          return (this.length+this.width)*2;
+      }
+  }
+  let moi = new Rectangle(100,50);
+  document.write(`<br>Diện tích là: ${moi.dientich()} <br>`);
+  document.write(`Chu vi là: ${moi.chuvi()}`);
+  let canvas = document.getElementById("canvas");
+  let ctx = canvas.getContext('2d');
+  ctx.fillStyle="red";
+  ctx.fillRect(5, 5, moi.length, moi.width);
+</script>
+</body>
+</html>
