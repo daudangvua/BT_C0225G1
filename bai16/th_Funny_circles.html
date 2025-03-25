@@ -7,38 +7,86 @@
 <body>
 <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
 <script>
-  function Circle(x, y, radius){
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-  }
-  function getRandomHex(){
-    return Math.floor(Math.random()*255);
-  }
-  function getRandomColor(){
-    let red = getRandomHex();
-    let green = getRandomHex();
-    let blue = getRandomHex();
-    return "rgb(" + red + "," + blue + "," + green +")";
-  }
-  function createCircle(){
-    let ctx = document.getElementById("myCanvas").getContext("2d");
-    let radius = Math.floor(Math.random() * 80);
-    let color = getRandomColor();
-    let x = Math.random() * window.innerWidth;
-    let y = Math.random() * window.innerHeight;
-    let circle = new Circle(x, y, radius);
-    ctx.beginPath();
-    ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-    ctx.fillStyle = color;
-    ctx.fill();
-  }
-  function createMultipleCircle(){
-    for(var i = 0; i < 30; i++){
-      createCircle();
+    // Định nghĩa lớp Hình tròn
+    function HinhTron(x, y, banKinh){
+        this.x = x;              // Tọa độ x
+        this.y = y;              // Tọa độ y
+        this.banKinh = banKinh;  // Bán kính
+        this.mau = layMauNgauNhien(); // Màu sắc
+        // Thêm thuộc tính vận tốc để di chuyển
+        this.dx = (Math.random() - 0.5) * 4; // Vận tốc ngang (-2 đến 2)
+        this.dy = (Math.random() - 0.5) * 4; // Vận tốc dọc (-2 đến 2)
     }
-  }
-  createMultipleCircle();
+
+    // Tạo số thập lục phân ngẫu nhiên
+    function laySoThapLucPhanNgauNhien(){
+        return Math.floor(Math.random() * 255);
+    }
+
+    // Tạo màu ngẫu nhiên
+    function layMauNgauNhien(){
+        let red = laySoThapLucPhanNgauNhien();
+        let xanhLa = laySoThapLucPhanNgauNhien();
+        let xanhDuong = laySoThapLucPhanNgauNhien();
+        return "rgb(" + red + "," + xanhLa + "," + xanhDuong +")";
+    }
+
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    let mangHinhTron = [];
+
+    // Tạo một hình tròn
+    function taoHinhTron(){
+        let banKinh = Math.floor(Math.random() * 80);
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        let hinhTron = new HinhTron(x, y, banKinh);
+        mangHinhTron.push(hinhTron);
+    }
+
+    // Tạo nhiều hình tròn
+    function taoNhieuHinhTron(){
+        for(var i = 0; i < 30; i++){
+            taoHinhTron();
+        }
+    }
+
+    // Hàm tạo hiệu ứng chuyển động
+    function chuyenDong() {
+        // Xóa canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Cập nhật và vẽ từng hình tròn
+        for(let i = 0; i < mangHinhTron.length; i++) {
+            let hinhTron = mangHinhTron[i];
+
+            // Cập nhật vị trí
+            hinhTron.x += hinhTron.dx;
+            hinhTron.y += hinhTron.dy;
+
+            // Nảy lại khi chạm biên
+            if(hinhTron.x + hinhTron.banKinh > canvas.width || hinhTron.x - hinhTron.banKinh < 0) {
+                hinhTron.dx = -hinhTron.dx;
+            }
+            if(hinhTron.y + hinhTron.banKinh > canvas.height || hinhTron.y - hinhTron.banKinh < 0) {
+                hinhTron.dy = -hinhTron.dy;
+            }
+
+            // Vẽ hình tròn
+            ctx.beginPath();
+            ctx.arc(hinhTron.x, hinhTron.y, hinhTron.banKinh, 0, 2 * Math.PI);
+            ctx.fillStyle = hinhTron.mau;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        // Yêu cầu khung hình tiếp theo
+        requestAnimationFrame(chuyenDong);
+    }
+
+    // Khởi tạo và bắt đầu
+    taoNhieuHinhTron();
+    chuyenDong();
 </script>
 </body>
 </html>
