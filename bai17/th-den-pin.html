@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Battery {
+        energy;
+        constructor(){
+            this.energy = 0;
+        }
+        setEnergy(energy) {
+            this.energy = energy;
+        }
+
+        getEnergy() {
+            return this.energy;
+        }
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    }
+    class FlashLamp {
+        battery;
+        status;
+        constructor(){
+            this.battery = null;
+            this.status = false;
+        }
+        setBattery(battery) {
+            this.battery = battery; // Gắn pin vào đèn
+        }
+        getBatteryInfo() {
+            return this.battery.getEnergy(); // Lấy thông tin năng lượng pin
+        }
+        Light(){
+            if (this.status) {
+                alert("đèn sáng");
+            } else {
+                alert("Đèn không sáng");
+            }
+        }
+        turnOn() {
+            this.status = true; // Bật đèn
+        }
+        turnOff() {
+            this.status = false; // Tắt đèn
+        }
+    }
+    let pin = new Battery();
+    pin.setEnergy(100);
+
+    let denPin = new FlashLamp();
+    denPin.setBattery(pin);
+
+    document.write("Battery info:" + denPin.getBatteryInfo() + "<br/>");
+    denPin.Light();
+
+    document.write("Turn on<br/>")
+    denPin.turnOn();
+    denPin.Light();
+    document.write("Battery info:" + denPin.getBatteryInfo() + "<br/>");
+
+    document.write("Turn off<br/>")
+    denPin.turnOff();
+    denPin.Light();
+</script>
+</body>
+</html>
