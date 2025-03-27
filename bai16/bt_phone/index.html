@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <td >
+            <button onclick="turnOn('tu')">Bật</button><button onclick="turnOff('tu')">Tắt</button>
+            <p id="startUp1"></p>
+        </td>
+        <td >
+            <button onclick="turnOn('khanh')">Bật</button><button onclick="turnOff('khanh')">Tắt</button>
+            <p id="startUp2"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="tu" placeholder="Tu"><button onclick="tuSendKhanh()">Send</button>
+        </td>
+        <td>
+            <input type="text" id="khanh"><button onclick="khanhSendTu()">Send</button>
+        </td>
+    </tr>
+    <tr>
+        <td id="inboxTu"></td>
+        <td id="inboxKhanh"></td>
+    </tr>
+</table>
+<script src="phone.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -5,37 +5,84 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Fibonaci</h2>
-<label for="first">Nhập số đầu tiên:</label>
-<input type="number" id="first" placeholder="Nhập số thứ nhất">
-<br><br>
-<label for="second">Nhập số thứ hai:</label>
-<input type="number" id="second" placeholder="Nhập số thứ hai">
-<br><br>
-<button onclick="generateFibonacci()">Hiển thị dãy Fibonacci</button>
-<p id="result"></p>
-
+<!--<h2>Fibonaci</h2>-->
+<!--<label for="first">Nhập số đầu tiên:</label>-->
+<!--<input type="number" id="first" placeholder="Nhập số thứ nhất">-->
+<!--<br><br>-->
+<!--<label for="second">Nhập số thứ hai:</label>-->
+<!--<input type="number" id="second" placeholder="Nhập số thứ hai">-->
+<!--<br><br>-->
+<!--<button onclick="generateFibonacci()">Hiển thị dãy Fibonacci</button>-->
+<!--<p id="result"></p>-->
+<!--<h2>sample screen</h2>-->
+<!--<label for="nhap"><input type="number" id="nhap" placeholder="nhap"></label>-->
+<!--<button id="add" onclick="add()">add</button>-->
+<!--<button id="display" onclick="display()">display</button>-->
+<!--<div id="res"></div>-->
 <script>
-    function generateFibonacci() {
-        let a = parseInt(document.getElementById("first").value);
-        let b = parseInt(document.getElementById("second").value);
+    // let x = 0;
+    // let a = [];
+    // function add() {
+    //     a[x] = document.getElementById("nhap").value;
+    //     x++;
+    //     document.getElementById("nhap").value = "";
+    // }
+    // function display() {
+    //     document.getElementById("res").innerHTML = a.join(", ");
+    // }
 
-        if (isNaN(a) || isNaN(b)) {
-            document.getElementById("result").innerHTML = "Vui lòng nhập hai số hợp lệ!";
-            return;
+    // function generateFibonacci() {
+    //     let a = parseInt(document.getElementById("first").value);
+    //     let b = parseInt(document.getElementById("second").value);
+    //
+    //     if (isNaN(a) || isNaN(b)) {
+    //         document.getElementById("result").innerHTML = "Vui lòng nhập hai số hợp lệ!";
+    //         return;
+    //     }
+    //
+    //     let result = a + ", " + b; // Hiển thị hai số đầu tiên
+    //
+    //     for (let i = 3; i <= 10; i++) { // Tính 8 số còn lại
+    //         let next = a + b;
+    //         result += ", " + next;
+    //         a = b;
+    //         b = next;
+    //     }
+    //
+    //     document.getElementById("result").innerHTML = result;
+    // }
+    let a = [2, 3, 4, 5];
+    let a2 = [-2, 3, 4, -5];
+    let a3 = [21, -3, 4, 5];
+    let a4 = [2, 31, 54, 55];
+    let x = [a, a2, a3, a4];
+
+    for (let i = 0; i < x.length; i++) {
+        let sum=0;
+        for (let j = 0; j < x[i].length; j++) {
+            sum+=x[i][j];
         }
-
-        let result = a + ", " + b; // Hiển thị hai số đầu tiên
-
-        for (let i = 3; i <= 10; i++) { // Tính 8 số còn lại
-            let next = a + b;
-            result += ", " + next;
-            a = b;
-            b = next;
-        }
-
-        document.getElementById("result").innerHTML = result;
+        console.log(`Tong tai hang ${i} la ${sum}`);
     }
+
+    for (let i = 0; i < x.length; i++) {
+        let sum=0;
+        for (let j = 0; j < x[i].length; j++) {
+            sum+=x[j][i];
+        }
+        console.log(`Tong tai cot ${i} la ${sum}`);
+    }
+    for (let i = 0; i < x.length; i++) {
+        let sum=0;
+        for (let j = 1; j < x[i].length; j++) {
+            sum+=x[i][i];
+        }
+        console.log(sum);
+    }
+    // let sum = 0;
+    // sum= x[0][0]+x[1][1]+x[2][2]+x[3][3]
+    // console.log(sum);
+
 </script>
 </body>
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="phone">
+    <h2>Điện thoại 1</h2>
+    <div class="status" id="status1">Pin: 100%</div>
+    <button onclick="phone1.turnOn()">Bật</button>
+    <button onclick="phone1.turnOff()">Tắt</button>
+    <button onclick="phone1.charge()">Sạc</button>
+    <br>
+    <input id="message1" placeholder="Nhập tin nhắn">
+    <button onclick="sendFromPhone1()">Gửi tới Phone 2</button>
+    <div class="messages" id="inbox1">Chưa có tin nhắn</div>
+</div>
+
+<div class="phone">
+    <h2>Điện thoại 2</h2>
+    <div class="status" id="status2">Pin: 100%</div>
+    <button onclick="phone2.turnOn()">Bật</button>
+    <button onclick="phone2.turnOff()">Tắt</button>
+    <button onclick="phone2.charge()">Sạc</button>
+    <br>
+    <input id="message2" placeholder="Nhập tin nhắn">
+    <button onclick="sendFromPhone2()">Gửi tới Phone 1</button>
+    <div class="messages" id="inbox2">Chưa có tin nhắn</div>
+</div>
+
+<script>
+    class Mobile {
+        constructor(statusId, inboxId) {
+            this.battery = 100;   // Pin bắt đầu từ 100
+            this.isOn = false;    // Điện thoại tắt
+            this.inbox = [];      // Tin nhắn nhận được
+            this.statusId = statusId; // ID để cập nhật trạng thái
+            this.inboxId = inboxId;   // ID để cập nhật tin nhắn
+        }
+
+        // Bật điện thoại
+        turnOn() {
+            if (!this.isOn && this.battery > 0) {
+                this.isOn = true;
+                this.useBattery();
+                this.updateScreen();
+            }
+        }
+
+        // Tắt điện thoại
+        turnOff() {
+            if (this.isOn) {
+                this.isOn = false;
+                this.updateScreen();
+            }
+        }
+
+        // Sạc pin
+        charge() {
+            this.battery = 100;
+            this.updateScreen();
+        }
+
+        // Nhận tin nhắn
+        receive(message) {
+            if (this.isOn && this.battery > 0) {
+                this.inbox.push(message);
+                this.useBattery();
+                this.updateScreen();
+            }
+        }
+
+        // Gửi tin nhắn
+        send(message, otherPhone) {
+            if (this.isOn && this.battery > 0) {
+                otherPhone.receive(message);
+                this.useBattery();
+                this.updateScreen();
+            }
+        }
+
+        // Dùng pin
+        useBattery() {
+            if (this.battery > 0) {
+                this.battery--;
+                if (this.battery === 0) {
+                    this.isOn = false;
+                }
+            }
+        }
+
+        // Cập nhật màn hình
+        updateScreen() {
+            let status = document.getElementById(this.statusId);
+            let inbox = document.getElementById(this.inboxId);
+
+            if (this.isOn) {
+                status.textContent = `Pin: ${this.battery}%`;
+            } else {
+                status.textContent = "Điện thoại tắt";
+            }
+
+            if (this.inbox.length > 0) {
+                inbox.innerHTML = this.inbox.join("<br>");
+            } else {
+                inbox.textContent = "Chưa có tin nhắn";
+            }
+        }
+    }
+
+    // Tạo hai điện thoại
+    let phone1 = new Mobile("status1", "inbox1");
+    let phone2 = new Mobile("status2", "inbox2");
+
+    // Gửi tin nhắn từ Phone 1 sang Phone 2
+    function sendFromPhone1() {
+        let message = document.getElementById("message1").value;
+        if (message) {
+            phone1.send(message, phone2);
+            document.getElementById("message1").value = "";
+        }
+    }
+
+    // Gửi tin nhắn từ Phone 2 sang Phone 1
+    function sendFromPhone2() {
+        let message = document.getElementById("message2").value;
+        if (message) {
+            phone2.send(message, phone1);
+            document.getElementById("message2").value = "";
+        }
+    }
+</script>
+</body>
+</html>
