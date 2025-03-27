@@ -13,9 +13,9 @@ class SwitchButton {
         this.lamp = lamp;
     }
 
-    connectToLamp(electricLamp_1){
-        return this.lamp = electricLamp_1;
-    }
+    // connectToLamp(electricLamp_1){
+    //     return this.lamp = electricLamp_1;
+    // }
 
     switchOff(){
         this.lamp.status = false;
